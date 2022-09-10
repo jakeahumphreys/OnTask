@@ -1,7 +1,10 @@
-﻿namespace NTask.Data.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace NTask.Data.Models;
 
 public class ProjectTask
 {
+    [Key]
     public Guid TaskId { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }

@@ -1,9 +1,11 @@
-﻿using NTask.Data.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using NTask.Data.Enums;
 
 namespace NTask.Data.Models;
 
 public sealed class Activity
 {
+    [Key]
     public Guid ActivityId { get; set; }
     public ActivityType Type { get; set; }
     public string Contents { get; set; }
