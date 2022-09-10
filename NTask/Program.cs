@@ -1,8 +1,11 @@
+using NTask.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddSingleton<IProjectRepository, ProjectRepository>();
 
 var app = builder.Build();
 
