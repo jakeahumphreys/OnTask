@@ -2,7 +2,7 @@
 
 namespace NTask.Data.Models;
 
-public class ProjectTask
+public class TaskRecord
 {
     [Key]
     public Guid TaskId { get; set; }
@@ -12,5 +12,5 @@ public class ProjectTask
     public TaskStatus Status { get; set; }
     
     public Guid ProjectId { get; set; }
-    public Project Project { get; set; }
+    public ProjectRecord ProjectRecord { get; set; }
 }

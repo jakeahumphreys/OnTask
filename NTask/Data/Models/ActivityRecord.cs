@@ -3,7 +3,7 @@ using NTask.Data.Enums;
 
 namespace NTask.Data.Models;
 
-public sealed class Activity
+public sealed class ActivityRecord
 {
     [Key]
     public Guid ActivityId { get; set; }
@@ -11,5 +11,5 @@ public sealed class Activity
     public string Contents { get; set; }
     
     public Guid TaskId { get; set; }
-    public ProjectTask ProjectTask { get; set; }
+    public TaskRecord TaskRecord { get; set; }
 }

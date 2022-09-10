@@ -5,12 +5,12 @@ namespace NTask.Data.Repositories;
 
 public interface IProjectRepository
 {
-    List<Project> GetAll();
+    List<ProjectRecord> GetAll();
 
-    Project GetById(Guid projectId);
-    void Create(Project project);
-    void Update(Project project);
-    void Delete(Project project);
+    ProjectRecord GetById(Guid projectId);
+    void Create(ProjectRecord projectRecord);
+    void Update(ProjectRecord projectRecord);
+    void Delete(ProjectRecord projectRecord);
 }
 
 public class ProjectRepository : IProjectRepository
@@ -22,28 +22,28 @@ public class ProjectRepository : IProjectRepository
         _context = new NTaskContext();
     }
 
-    public List<Project> GetAll()
+    public List<ProjectRecord> GetAll()
     {
         return _context.Projects.ToList();
     }
 
-    public Project GetById(Guid projectId)
+    public ProjectRecord GetById(Guid projectId)
     {
         return _context.Projects.SingleOrDefault(x => x.ProjectId == projectId);
     }
 
-    public void Create(Project project)
+    public void Create(ProjectRecord projectRecord)
     {
-        _context.Projects.Add(project);
+        _context.Projects.Add(projectRecord);
     }
 
-    public void Update(Project project)
+    public void Update(ProjectRecord projectRecord)
     {
-        _context.Projects.Update(project);
+        _context.Projects.Update(projectRecord);
     }
 
-    public void Delete(Project project)
+    public void Delete(ProjectRecord projectRecord)
     {
-        _context.Projects.Remove(project);
+        _context.Projects.Remove(projectRecord);
     }
 }

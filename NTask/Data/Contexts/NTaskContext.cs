@@ -5,9 +5,9 @@ namespace NTask.Data.Contexts;
 
 public sealed class NTaskContext : DbContext
 {
-    public DbSet<Project> Projects { get; set; }
-    public DbSet<ProjectTask> Tasks { get; set; }
-    public DbSet<Activity> Activities { get; set; }
+    public DbSet<ProjectRecord> Projects { get; set; }
+    public DbSet<TaskRecord> Tasks { get; set; }
+    public DbSet<ActivityRecord> Activities { get; set; }
     
     public string DbPath { get; }
     
