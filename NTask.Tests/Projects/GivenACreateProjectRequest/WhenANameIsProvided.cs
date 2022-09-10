@@ -38,6 +38,7 @@ public sealed class WhenANameIsProvided
     {
         _projectRepository.Verify(x => x.Create(It.Is<ProjectRecord>(y => 
             y.IsArchived == false &&
-            y.Name == "TestProjectName")), Times.Once);
+            y.Name == "TestProjectName" &&
+            y.Tasks.Count == 0)), Times.Once);
     }
 }
