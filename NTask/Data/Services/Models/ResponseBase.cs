@@ -7,14 +7,9 @@ public class ResponseBase
     public List<Error> Errors { get; set; }
     public bool HasError => Errors.Any();
 
-    public ResponseBase WithError(Error error)
+    public T WithError<T>(Error error) where T: ResponseBase
     {
-        return new ResponseBase
-        {
-            Errors =
-            {
-                error
-            }
-        };
+        Errors.Add(error);
+        return (T) this;
     }
 }
