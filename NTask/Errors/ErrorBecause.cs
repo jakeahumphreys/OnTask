@@ -8,4 +8,9 @@ public static class ErrorBecause
     {
         Message = $"Please provide a value for '{value}'."
     };
+
+    public static Error RecordByIdNotFound(Guid id) => new Error
+    {
+        Message = $"A record was not found for id '{id.ToString()}'."
+    };
 }

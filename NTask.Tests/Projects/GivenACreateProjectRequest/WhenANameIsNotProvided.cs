@@ -3,6 +3,7 @@ using NTask.Data.Models;
 using NTask.Data.Repositories;
 using NTask.Data.Services;
 using NTask.Data.Services.Models;
+using NTask.Data.Services.Models.Communication;
 using NUnit.Framework;
 
 namespace NTask.Tests.Projects.GivenACreateProjectRequest;

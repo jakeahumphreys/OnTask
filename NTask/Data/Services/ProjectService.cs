@@ -1,6 +1,7 @@
+using NTask.Data.Mappers;
 using NTask.Data.Models;
 using NTask.Data.Repositories;
-using NTask.Data.Services.Models;
+using NTask.Data.Services.Models.Communication;
 using NTask.Errors;
 
 namespace NTask.Data.Services;
@@ -12,6 +13,22 @@ public class ProjectService
     public ProjectService(IProjectRepository projectRepository)
     {
         _projectRepository = projectRepository;
+    }
+
+    public GetProjectByIdResponse GetProjectById(Guid id)
+    {
+        if (id == Guid.Empty)
+            return new GetProjectByIdResponse().WithError<GetProjectByIdResponse>(ErrorBecause.MissingRequiredValue("Id"));
+
+        var project = _projectRepository.GetById(id);
+
+        if (project == null)
+            return new GetProjectByIdResponse().WithError<GetProjectByIdResponse>(ErrorBecause.RecordByIdNotFound(id));
+
+        return new GetProjectByIdResponse
+        {
+            Project = ProjectMapper.MapToDto(project)
+        };
     }
 
     public CreateProjectResponse CreateProject(CreateProjectRequest request)

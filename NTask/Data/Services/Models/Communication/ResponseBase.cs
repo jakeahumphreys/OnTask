@@ -1,6 +1,6 @@
 using NTask.Errors.Models;
 
-namespace NTask.Data.Services.Models;
+namespace NTask.Data.Services.Models.Communication;
 
 public class ResponseBase
 {
