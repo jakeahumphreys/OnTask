@@ -1,3 +1,6 @@
 ﻿/NTask/obj/
 /NTask/bin
 .idea
+NTask.Tests/bin
+NTask.Tests/obj
+NTask.sln.DotSettings.user
