@@ -4,6 +4,11 @@ namespace NTask.Data.Models;
 
 public class ProjectRecord
 {
+    public ProjectRecord()
+    {
+        Tasks = new List<TaskRecord>();
+    }
+    
     [Key]
     public Guid ProjectId { get; set; }
     public string Name { get; set; }
