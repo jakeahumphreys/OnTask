@@ -17,7 +17,7 @@ public class ProjectService
     public CreateProjectResponse CreateProject(CreateProjectRequest request)
     {
         if (string.IsNullOrEmpty(request.Name))
-            return new CreateProjectResponse().WithError<CreateProjectResponse>(ErrorBecause.MissingRequiredValue("Description"));
+            return new CreateProjectResponse().WithError<CreateProjectResponse>(ErrorBecause.MissingRequiredValue("Name"));
 
         var projectRecord = new ProjectRecord
         {
