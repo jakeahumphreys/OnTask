@@ -1,3 +1,8 @@
+<div align="center">
+<img src="https://i.imgur.com/h7KHBm4.png" alt="An image of NTask" alt="Markdown Monster icon" style="margin-right: 10px; border-style: solid; margin-bottom: 20px;" width="600" height="350"/>
+</div>
+
+
 # NTask
 A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0) task management application written in .Net Core. As Blazor is the spiritual successor to ASP.Net I wanted to start transferring my knowledge into the framework. Blazor is currently actively developed with plans to make it compatible with MAUI.
 
@@ -21,7 +26,8 @@ If you download this repository, to run the application within electron you'll n
 Then run the application with:
 ```electronize start```
 
-Or for a hot-reload type experience: ```electronize start /watch```
+~~Or for a hot-reload type experience: ```electronize start /watch```~~
+(Doesn't work with MudBlazor)
 
 
 The application can be built as an electron .exe with:
