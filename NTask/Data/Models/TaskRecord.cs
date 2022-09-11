@@ -18,7 +18,4 @@ public class TaskRecord
     public TaskStatus Status { get; set; }
     
     public List<ActivityRecord> ActivityRecords { get; set; }
-    
-    public Guid ProjectId { get; set; }
-    public ProjectRecord ProjectRecord { get; set; }
 }

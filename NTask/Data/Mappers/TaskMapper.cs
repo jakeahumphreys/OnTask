@@ -9,7 +9,7 @@ public static class TaskMapper
     {
         return new TaskDto
         {
-            Id = taskRecord.ProjectId,
+            Id = taskRecord.TaskId,
             Name = taskRecord.Name,
             Description = taskRecord.Description,
             DueDate = taskRecord.DueDate,

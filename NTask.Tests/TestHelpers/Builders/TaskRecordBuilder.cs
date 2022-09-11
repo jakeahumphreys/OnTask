@@ -14,7 +14,7 @@ public class TaskRecordBuilder
 
     public TaskRecordBuilder WithId(Guid id)
     {
-        _taskRecord.ProjectId = id;
+        _taskRecord.TaskId = id;
         return this;
     }
 
