@@ -34,7 +34,14 @@
             </MudCardHeader>
             <MudDivider DividerType="DividerType.FullWidth" Class="my-6"/>
             <MudCardContent>
-              
+                <MudList Clickable="true">
+                    @foreach (var task in _project.Tasks)
+                    {
+                        <MudListItem>
+                            @task.Name
+                        </MudListItem>
+                    }
+                </MudList>
             </MudCardContent>
         </MudCard>
 </MudContainer>
