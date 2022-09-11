@@ -17,15 +17,17 @@ public sealed class WhenProjectsExist
     private GetAllProjectsResponse _result;
     private Guid _guid;
     private DateTime _created;
+    private Guid _taskGuid;
 
     [OneTimeSetUp]
     public void Setup()
     {
         _guid = Guid.NewGuid();
+        _taskGuid = Guid.NewGuid();
         _created = DateTime.Now;
 
         var task = new TaskRecordBuilder()
-            .WithId(Guid.NewGuid())
+            .WithId(_taskGuid)
             .WithName("TestTask")
             .WithDescription("TestTaskDesc")
             .WithStatus(TaskStatus.Todo)
@@ -74,6 +76,7 @@ public sealed class WhenProjectsExist
         Assert.That(_result.Projects.First().Value.Created, Is.EqualTo(_created));
         Assert.That(_result.Projects.First().Value.IsArchived, Is.EqualTo(false));
         
+        Assert.That(_result.Projects.First().Value.Tasks.First().Id, Is.EqualTo(_taskGuid));
         Assert.That(_result.Projects.First().Value.Tasks.First().Name, Is.EqualTo("TestTask"));
         Assert.That(_result.Projects.First().Value.Tasks.First().Description, Is.EqualTo("TestTaskDesc"));
         Assert.That(_result.Projects.First().Value.Tasks.First().TaskStatus, Is.EqualTo(TaskStatus.Todo));

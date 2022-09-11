@@ -17,15 +17,17 @@ public sealed class WhenARecordExists
 
     private Guid _guid;
     private DateTime _created;
+    private Guid _taskGuid;
 
     [OneTimeSetUp]
     public void Setup()
     {
         _guid = Guid.NewGuid();
+        _taskGuid = Guid.NewGuid();
         _created = DateTime.Now;
         
         var task = new TaskRecordBuilder()
-            .WithId(Guid.NewGuid())
+            .WithId(_taskGuid)
             .WithName("TestTask")
             .WithDescription("TestTaskDesc")
             .WithStatus(TaskStatus.Todo)
@@ -71,6 +73,7 @@ public sealed class WhenARecordExists
         Assert.That(_result.Project.Created, Is.EqualTo(_created));
         Assert.That(_result.Project.IsArchived, Is.False);
         
+        Assert.That(_result.Project.Tasks.First().Id, Is.EqualTo(_taskGuid));
         Assert.That(_result.Project.Tasks.First().Name, Is.EqualTo("TestTask"));
         Assert.That(_result.Project.Tasks.First().Description, Is.EqualTo("TestTaskDesc"));
         Assert.That(_result.Project.Tasks.First().TaskStatus, Is.EqualTo(TaskStatus.Todo));
