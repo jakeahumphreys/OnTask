@@ -27,7 +27,7 @@
                     <MudText Typo="Typo.caption">@project.Value.Created</MudText>
                 </MudCardContent>
                 <MudCardActions>
-                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Default"/>
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Default" @onclick="@(() => OpenProject(project.Key))"/>
                 </MudCardActions>
             </MudCard>
     </MudItem>

@@ -11,10 +11,10 @@ public partial class Index
 {
     [Inject] private IProjectRepository ProjectRepository { get; set; }
     [Inject] private IDialogService DialogService { get; set; }
+    [Inject] private NavigationManager NavigationManager { get; set; }
     
     private AddProjectModal Modal { get; set; }
     
-    private int ProjectCount { get; set; }
     private Dictionary<Guid, ProjectDto> Projects { get; set; }
 
     protected override void OnInitialized()
@@ -29,5 +29,10 @@ public partial class Index
     {
         var options = new DialogOptions {CloseOnEscapeKey = true};
         DialogService.Show<AddProjectModal>("Add Project", options);
+    }
+
+    private void OpenProject(Guid projectId)
+    {
+        NavigationManager.NavigateTo($"/project/{projectId}");
     }
 }
