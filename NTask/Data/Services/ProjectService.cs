@@ -53,6 +53,7 @@ public class ProjectService
             ProjectId = Guid.NewGuid(),
             Name = request.Name,
             Description = request.Description,
+            Created = DateTime.Now,
             IsArchived = false
         };
 

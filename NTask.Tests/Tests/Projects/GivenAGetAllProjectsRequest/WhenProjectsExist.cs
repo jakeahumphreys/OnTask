@@ -15,16 +15,19 @@ public sealed class WhenProjectsExist
     private Mock<IProjectRepository> _projectRepository;
     private GetAllProjectsResponse _result;
     private Guid _guid;
+    private DateTime _created;
 
     [OneTimeSetUp]
     public void Setup()
     {
         _guid = Guid.NewGuid();
-
+        _created = DateTime.Now;
+        
         var project = new ProjectRecordBuilder()
             .WithId(_guid)
             .WithName("TestProject")
             .WithDescription("Description")
+            .WithCreated(_created)
             .WithTasks(new List<TaskRecord>())
             .IsArchived(false)
             .Build();
@@ -60,6 +63,7 @@ public sealed class WhenProjectsExist
         Assert.That(_result.Projects.First().Value.Id, Is.EqualTo(_guid));
         Assert.That(_result.Projects.First().Value.Name, Is.EqualTo("TestProject"));
         Assert.That(_result.Projects.First().Value.Description, Is.EqualTo("Description"));
+        Assert.That(_result.Projects.First().Value.Created, Is.EqualTo(_created));
         Assert.That(_result.Projects.First().Value.IsArchived, Is.EqualTo(false));
     }
 }

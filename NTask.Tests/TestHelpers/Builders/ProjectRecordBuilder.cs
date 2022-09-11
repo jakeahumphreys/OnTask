@@ -29,6 +29,12 @@ public class ProjectRecordBuilder
         return this;
     }
 
+    public ProjectRecordBuilder WithCreated(DateTime created)
+    {
+        _projectRecord.Created = created;
+        return this;
+    }
+
     public ProjectRecordBuilder WithTasks(List<TaskRecord> tasks)
     {
         _projectRecord.Tasks = tasks;
