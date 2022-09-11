@@ -3,6 +3,7 @@ using NTask.Data.Models;
 using NTask.Data.Repositories;
 using NTask.Data.Services;
 using NTask.Data.Services.Models.Communication.Projects;
+using NTask.Tests.TestHelpers.Builders;
 using NUnit.Framework;
 
 namespace NTask.Tests.Tests.Projects.GivenAGetProjectByIdRequest;
@@ -20,16 +21,17 @@ public sealed class WhenARecordExists
     public void Setup()
     {
         _guid = Guid.NewGuid();
+
+        var project = new ProjectRecordBuilder()
+            .WithId(_guid)
+            .WithName("TestRecord")
+            .WithTasks(new List<TaskRecord>())
+            .IsArchived(false)
+            .Build();
         
         _repository = new Mock<IProjectRepository>();
         _repository.Setup(x => x.GetById(It.Is<Guid>(y => y == _guid)))
-            .Returns(new ProjectRecord
-            {
-                Name = "TestRecord",
-                Tasks = new List<TaskRecord>(),
-                IsArchived = false,
-                ProjectId = _guid
-            });
+            .Returns(project);
         
         var subject = new ProjectService(_repository.Object);
         
