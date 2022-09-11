@@ -11,6 +11,7 @@ public static class ProjectMapper
         {
             Id = projectRecord.ProjectId,
             Name = projectRecord.Name,
+            Description = projectRecord.Description,
             IsArchived = projectRecord.IsArchived
         };
     }

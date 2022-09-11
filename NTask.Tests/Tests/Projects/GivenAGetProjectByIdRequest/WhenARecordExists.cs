@@ -25,6 +25,7 @@ public sealed class WhenARecordExists
         var project = new ProjectRecordBuilder()
             .WithId(_guid)
             .WithName("TestRecord")
+            .WithDescription("Description")
             .WithTasks(new List<TaskRecord>())
             .IsArchived(false)
             .Build();
@@ -56,6 +57,7 @@ public sealed class WhenARecordExists
     {
         Assert.That(_result.Project.Id, Is.EqualTo(_guid));
         Assert.That(_result.Project.Name, Is.EqualTo("TestRecord"));
+        Assert.That(_result.Project.Description, Is.EqualTo("Description"));
         Assert.That(_result.Project.IsArchived, Is.False);
     }
 }

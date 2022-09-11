@@ -9,7 +9,7 @@ namespace NTask.Tests.Tests.Projects.GivenACreateProjectRequest;
 
 [TestFixture]
 [Parallelizable]
-public sealed class WhenANameIsProvided
+public sealed class WhenTheRequestIsValid
 {
     private Mock<IProjectRepository> _projectRepository;
     private CreateProjectResponse _result;
@@ -22,7 +22,8 @@ public sealed class WhenANameIsProvided
 
         _result = subject.CreateProject(new CreateProjectRequest
         {
-            Name = "TestProjectName"
+            Name = "TestProjectName",
+            Description = "TestDescription"
         });
     }
     
@@ -39,6 +40,7 @@ public sealed class WhenANameIsProvided
         _projectRepository.Verify(x => x.Create(It.Is<ProjectRecord>(y => 
             y.IsArchived == false &&
             y.Name == "TestProjectName" &&
+            y.Description == "TestDescription" &&
             y.Tasks.Count == 0)), Times.Once);
     }
 }

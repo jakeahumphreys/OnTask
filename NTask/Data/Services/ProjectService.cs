@@ -45,10 +45,14 @@ public class ProjectService
         if (string.IsNullOrEmpty(request.Name))
             return new CreateProjectResponse().WithError<CreateProjectResponse>(ErrorBecause.MissingRequiredValue("Name"));
 
+        if (string.IsNullOrEmpty(request.Description))
+            return new CreateProjectResponse().WithError<CreateProjectResponse>(ErrorBecause.MissingRequiredValue("Description"));
+
         var projectRecord = new ProjectRecord
         {
             ProjectId = Guid.NewGuid(),
             Name = request.Name,
+            Description = request.Description,
             IsArchived = false
         };
 

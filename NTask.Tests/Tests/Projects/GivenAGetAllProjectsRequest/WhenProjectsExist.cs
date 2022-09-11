@@ -24,6 +24,7 @@ public sealed class WhenProjectsExist
         var project = new ProjectRecordBuilder()
             .WithId(_guid)
             .WithName("TestProject")
+            .WithDescription("Description")
             .WithTasks(new List<TaskRecord>())
             .IsArchived(false)
             .Build();
@@ -58,6 +59,7 @@ public sealed class WhenProjectsExist
         Assert.That(_result.Projects.First().Key, Is.EqualTo(_guid));
         Assert.That(_result.Projects.First().Value.Id, Is.EqualTo(_guid));
         Assert.That(_result.Projects.First().Value.Name, Is.EqualTo("TestProject"));
+        Assert.That(_result.Projects.First().Value.Description, Is.EqualTo("Description"));
         Assert.That(_result.Projects.First().Value.IsArchived, Is.EqualTo(false));
     }
 }

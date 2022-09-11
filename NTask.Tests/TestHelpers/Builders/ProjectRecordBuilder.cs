@@ -23,6 +23,12 @@ public class ProjectRecordBuilder
         return this;
     }
 
+    public ProjectRecordBuilder WithDescription(string description)
+    {
+        _projectRecord.Description = description;
+        return this;
+    }
+
     public ProjectRecordBuilder WithTasks(List<TaskRecord> tasks)
     {
         _projectRecord.Tasks = tasks;
