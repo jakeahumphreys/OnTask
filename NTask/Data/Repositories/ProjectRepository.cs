@@ -7,7 +7,7 @@ public interface IProjectRepository
 {
     List<ProjectRecord> GetAll();
 
-    ProjectRecord? GetById(Guid projectId);
+    ProjectRecord GetById(Guid projectId);
     void Create(ProjectRecord projectRecord);
     void Update(ProjectRecord projectRecord);
     void Delete(ProjectRecord projectRecord);
@@ -27,7 +27,7 @@ public class ProjectRepository : IProjectRepository
         return _context.Projects.ToList();
     }
 
-    public ProjectRecord? GetById(Guid projectId)
+    public ProjectRecord GetById(Guid projectId)
     {
         return _context.Projects.SingleOrDefault(x => x.ProjectId == projectId);
     }
