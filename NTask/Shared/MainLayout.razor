@@ -2,7 +2,7 @@
 
 <PageTitle>NTask</PageTitle>
 
-<MudThemeProvider/>
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
@@ -12,6 +12,7 @@
         NTask
     </MudAppBar>
     <MudDrawer @bind-Open="@_drawerOpen">
+        <MudSwitch @bind-Checked="@_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" ThumbIcon="@Icons.Material.Filled.ShieldMoon" Label="Dark Mode"/>
         <NavMenu/>
     </MudDrawer>
     <MudMainContent>
@@ -24,6 +25,9 @@
 
 @code{
     bool _drawerOpen = false;
+    
+    private MudTheme _theme = new();
+    private bool _isDarkMode;
 
     void DrawerToggle()
     {
