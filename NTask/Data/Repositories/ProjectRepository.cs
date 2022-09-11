@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using NTask.Data.Contexts;
 using NTask.Data.Models;
 
@@ -24,12 +25,18 @@ public class ProjectRepository : IProjectRepository
 
     public List<ProjectRecord> GetAll()
     {
-        return _context.Projects.ToList();
+        return _context.Projects
+            .Include(x => x.Tasks)
+            .ThenInclude(y => y.ActivityRecords)
+            .ToList();
     }
 
     public ProjectRecord GetById(Guid projectId)
     {
-        return _context.Projects.SingleOrDefault(x => x.ProjectId == projectId);
+        return _context.Projects
+            .Include(x => x.Tasks)
+            .ThenInclude(y => y.ActivityRecords)
+            .SingleOrDefault(x => x.ProjectId == projectId);
     }
 
     public void Create(ProjectRecord projectRecord)
