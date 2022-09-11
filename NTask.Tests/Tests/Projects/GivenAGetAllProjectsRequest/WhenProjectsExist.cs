@@ -5,6 +5,7 @@ using NTask.Data.Services;
 using NTask.Data.Services.Models.Communication.Projects;
 using NTask.Tests.TestHelpers.Builders;
 using NUnit.Framework;
+using TaskStatus = NTask.Data.Enums.TaskStatus;
 
 namespace NTask.Tests.Tests.Projects.GivenAGetAllProjectsRequest;
 
@@ -22,13 +23,20 @@ public sealed class WhenProjectsExist
     {
         _guid = Guid.NewGuid();
         _created = DateTime.Now;
+
+        var task = new TaskRecordBuilder()
+            .WithId(Guid.NewGuid())
+            .WithName("TestTask")
+            .WithDescription("TestTaskDesc")
+            .WithStatus(TaskStatus.Todo)
+            .Build();
         
         var project = new ProjectRecordBuilder()
             .WithId(_guid)
             .WithName("TestProject")
             .WithDescription("Description")
             .WithCreated(_created)
-            .WithTasks(new List<TaskRecord>())
+            .WithTask(task)
             .IsArchived(false)
             .Build();
         
@@ -65,5 +73,10 @@ public sealed class WhenProjectsExist
         Assert.That(_result.Projects.First().Value.Description, Is.EqualTo("Description"));
         Assert.That(_result.Projects.First().Value.Created, Is.EqualTo(_created));
         Assert.That(_result.Projects.First().Value.IsArchived, Is.EqualTo(false));
+        
+        Assert.That(_result.Projects.First().Value.Tasks.First().Name, Is.EqualTo("TestTask"));
+        Assert.That(_result.Projects.First().Value.Tasks.First().Description, Is.EqualTo("TestTaskDesc"));
+        Assert.That(_result.Projects.First().Value.Tasks.First().TaskStatus, Is.EqualTo(TaskStatus.Todo));
+        Assert.That(_result.Projects.First().Value.Tasks.First().Activities, Has.Count.Zero);
     }
 }

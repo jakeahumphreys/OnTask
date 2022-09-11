@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TaskStatus = NTask.Data.Enums.TaskStatus;
 
 namespace NTask.Data.Models;
 

@@ -35,9 +35,9 @@ public class ProjectRecordBuilder
         return this;
     }
 
-    public ProjectRecordBuilder WithTasks(List<TaskRecord> tasks)
+    public ProjectRecordBuilder WithTask(TaskRecord taskRecord)
     {
-        _projectRecord.Tasks = tasks;
+        _projectRecord.Tasks.Add(taskRecord);
         return this;
     }
 

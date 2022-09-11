@@ -13,6 +13,7 @@ public static class ProjectMapper
             Name = projectRecord.Name,
             Description = projectRecord.Description,
             Created = projectRecord.Created,
+            Tasks = projectRecord.Tasks.ConvertAll(TaskMapper.FromRecordToDto),
             IsArchived = projectRecord.IsArchived
         };
     }
