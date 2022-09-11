@@ -1,8 +1,12 @@
 @page "/"
+@using NTask.Shared.Components
 
 <PageTitle>Index</PageTitle>
 
+<AddProjectModal @ref="Modal"></AddProjectModal>
+
 <h1>Projects</h1>
+<button type="button" class="btn btn-success" @onclick="()=> Modal.Show()">Add</button>
 <hr/>
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
