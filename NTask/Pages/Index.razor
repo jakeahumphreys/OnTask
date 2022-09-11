@@ -3,38 +3,34 @@
 
 <PageTitle>Index</PageTitle>
 
-<AddProjectModal @ref="Modal"></AddProjectModal>
-
 <h1>Projects</h1>
-<button type="button" class="btn btn-success" @onclick="()=> Modal.Show()">Add</button>
-<hr/>
+<MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="OpenDialog">
+    Add New
+</MudButton>
+<MudDivider DividerType="DividerType.FullWidth" Class="my-6"/>
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<MudContainer>
+    <MudGrid Spacing="2" Justify="Justify.Center">
     @foreach (var project in Projects)
     {
-        <div class="col">
-            <div class="card rounded shadow-lg">
-                 <div class="card-header">
-                    <h5>@project.Value.Name</h5>
-                    @if(!project.Value.IsArchived)
-                    {
-                        <span class="badge bg-success">Active</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-info">Archived</span>
-                    }
-                </div>
-                <div class="card-body">
-                    <p>@project.Value.Description</p>
-                    <button type="button" class="btn btn-dark">Show Tasks</button>
-                </div>
-                <div class="card-footer">
-                    <p class="initialism"><small>Project Created: @project.Value.Created</small></p>
-                    <p class="text-muted initialism"><small>@project.Key</small></p>
-                </div>
-            </div>
-        </div>
+        <MudItem xs="6">
+            <MudCard Class="border-solid border-2 mud-border-primary pa-4 mud-elevation-4 rounded">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.body1">@project.Value.Name</MudText>
+                        <MudText Typo="Typo.body2">@project.Key</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudDivider/>
+                <MudCardContent>
+                    <MudText>@project.Value.Description</MudText>
+                    <MudText Typo="Typo.caption">@project.Value.Created</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Default"/>
+                </MudCardActions>
+            </MudCard>
+    </MudItem>
     }
-</div>
-
+    </MudGrid>
+</MudContainer>

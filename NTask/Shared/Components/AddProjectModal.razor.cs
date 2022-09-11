@@ -1,39 +1,26 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using NTask.Data.Repositories;
 using NTask.Data.Services;
 using NTask.Data.Services.Models.Communication.Projects;
-using NTask.Data.Services.Models.DTO;
 
 namespace NTask.Shared.Components;
 
 public partial class AddProjectModal
 {
-    private string _modalClass = "";
-    private string _modalDisplay = "";
-    private bool _showBackdrop = false;
-
     private AddProjectFormModel _formModel = new AddProjectFormModel();
     
     [Inject] private IProjectRepository ProjectRepository { get; set; }
     [Inject] private NavigationManager NavigationManager { get; set; }
 
-    public void Show()
+    [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
+    
+    void Cancel()
     {
-        _modalDisplay = "block;";
-        _modalClass = "Show";
-        _showBackdrop = true;
-        StateHasChanged();
+        MudDialog.Cancel();
     }
     
-    public void Hide()
-    {
-        _modalDisplay = "none;";
-        _modalClass = "";
-        _showBackdrop = false;
-        StateHasChanged();
-    }
-
     void FormSubmit()
     {
         var projectService = new ProjectService(ProjectRepository);
