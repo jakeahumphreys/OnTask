@@ -17,17 +17,26 @@
             <MudCard Class="border-solid border-2 mud-border-primary pa-4 mud-elevation-4 rounded">
                 <MudCardHeader>
                     <CardHeaderContent>
-                        <MudText Typo="Typo.body1">@project.Value.Name</MudText>
-                        <MudText Typo="Typo.body2">@project.Key</MudText>
+                        @if (project.Value.IsArchived)
+                        {
+                            <MudChip Label="true" Color="Color.Info" Style="display:inline-block;">Archived</MudChip>
+                        }
+                        else
+                        {
+                            <MudChip Label="true" Color="Color.Success" Style="display:inline-block;">Active</MudChip>
+                        }
+                        <MudText Typo="Typo.body1" Style="display:inline-block;">@project.Value.Name</MudText>
+                        <br/>
+                        <MudText Typo="Typo.caption">ID: @project.Key</MudText>
                     </CardHeaderContent>
                 </MudCardHeader>
                 <MudDivider/>
                 <MudCardContent>
                     <MudText>@project.Value.Description</MudText>
-                    <MudText Typo="Typo.caption">@project.Value.Created</MudText>
                 </MudCardContent>
                 <MudCardActions>
                     <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Default" @onclick="@(() => OpenProject(project.Key))"/>
+                    <MudText Typo="Typo.caption">Created: @project.Value.Created</MudText>
                 </MudCardActions>
             </MudCard>
     </MudItem>

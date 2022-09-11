@@ -38,6 +38,7 @@ Task.Run(async () =>
     var window = await Electron.WindowManager.CreateWindowAsync(
         new BrowserWindowOptions
         {
+            Title = "NTask",
             AutoHideMenuBar = true,
             Show = false,
             WebPreferences = new WebPreferences
