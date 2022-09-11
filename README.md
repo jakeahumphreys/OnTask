@@ -8,6 +8,30 @@ One of the big things about Blazor that I enjoy, is the ability to write the UI 
 - NUnit / Moq, for testing.
 - [MudBlazor](https://mudblazor.com) for a clean, modern UI.
 - MS Dependency Injection (Built into Blazor).
+- [ElectronNET](https://github.com/ElectronNET/Electron.NET) - An Electron Wrapper for .NET
+
+## Electron
+As referenced above, this application utilises the ElectronNET package. This allows blazor to be run as a desktop application inside an electron shell. This is a great option whilst waiting for Blazor Hybrid to become mainstream.
+
+### Running Electron
+If you download this repository, to run the application within electron you'll need the ElectronNET.CLI tool:
+
+```dotnet tool install ElectronNET.CLI -g```
+
+Then run the application with:
+```electronize start```
+
+Or for a hot-reload type experience: ```electronize start /watch```
+
+
+The application can be built as an electron .exe with:
+
+```
+electronize build /target win
+electronize build /target osx
+electronize build /target osx-arm64
+electronize build /target linux
+```
 
 ## Design Patterns
 - Builder Pattern (used to construct objects for testing).
