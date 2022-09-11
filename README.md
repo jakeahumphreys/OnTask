@@ -1,5 +1,5 @@
 # NTask
-A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0) Task Management Application written in .Net Core. As Blazor is the spiritual successor to ASP.Net I wanted to start transferring my knowledge into the framework. Blazor is currently actively developed with plans to make it compatible with MAUI.
+A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0) task management application written in .Net Core. As Blazor is the spiritual successor to ASP.Net I wanted to start transferring my knowledge into the framework. Blazor is currently actively developed with plans to make it compatible with MAUI.
 
 One of the big things about Blazor that I enjoy, is the ability to write the UI in CSS/HTML or use a third party library.
 
