@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using NTask.Data.Repositories;
 using NTask.Data.Services;
 using NTask.Data.Services.Models.DTO;
@@ -9,6 +10,7 @@ namespace NTask.Pages;
 public partial class Index
 {
     [Inject] private IProjectRepository ProjectRepository { get; set; }
+    [Inject] private IDialogService DialogService { get; set; }
     
     private AddProjectModal Modal { get; set; }
     
@@ -21,5 +23,11 @@ public partial class Index
         
         var projectResponse = projectService.GetAllProjects();
         Projects = projectResponse.Projects;
+    }
+
+    private void OpenDialog()
+    {
+        var options = new DialogOptions {CloseOnEscapeKey = true};
+        DialogService.Show<AddProjectModal>("Add Project", options);
     }
 }

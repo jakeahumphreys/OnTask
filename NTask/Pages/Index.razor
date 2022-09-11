@@ -3,11 +3,11 @@
 
 <PageTitle>Index</PageTitle>
 
-@* <AddProjectModal @ref="Modal"></AddProjectModal> *@
-
 <h1>Projects</h1>
-<MudButton Variant="Variant.Filled" Color="Color.Secondary">Add New</MudButton>
-  <MudDivider DividerType="DividerType.FullWidth" Class="my-6"/>
+<MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="OpenDialog">
+    Add New
+</MudButton>
+<MudDivider DividerType="DividerType.FullWidth" Class="my-6"/>
 
 <MudContainer>
     <MudGrid Spacing="2" Justify="Justify.Center">

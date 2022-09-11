@@ -1,34 +1,18 @@
-@using NTask.Data.Services.Models.DTO
-<div class="modal @_modalClass" tabindex="-1" style="display:@_modalDisplay">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add Project</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <EditForm Model="@_formModel" OnValidSubmit="FormSubmit">
-                <div class="modal-body">
-                    <DataAnnotationsValidator/>
-                    <ValidationSummary/>
-                    <div class="mb-3">
-                        <label for="addProjectFormNameInput" class="form-label">Project Name</label>
-                        <input type="text" class="form-control" id="addProjectFormNameInput" @bind="_formModel.Name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="addProjectFormDescriptionInput" class="form-label">Project Description</label>
-                        <textarea class="form-control" id="addProjectFormDescriptionInput" rows="2" @bind="_formModel.Description"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="Hide">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </EditForm>
-        </div>
-    </div>
-</div>
-
-@if (_showBackdrop)
-{
-    <div class="modal-backdrop fade show"></div>
-}
+<MudDialog>
+    <DialogContent>
+        <EditForm Model="@_formModel" OnValidSubmit="FormSubmit">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Project Name" @bind-Value="@_formModel.Name" For="@(() => _formModel.Name)"/>  
+                    <MudTextField Label="Project Description" @bind-Value="@_formModel.Description" For="@(() => _formModel.Description)"/>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton Color="Color.Primary" ButtonType="ButtonType.Submit" Variant="Variant.Filled">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>
