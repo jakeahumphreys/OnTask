@@ -5,7 +5,7 @@ using NTask.Data.Services;
 using NTask.Data.Services.Models.Communication.Projects;
 using NUnit.Framework;
 
-namespace NTask.Tests.Projects.GivenAGetAllProjectsRequest;
+namespace NTask.Tests.Tests.Projects.GivenAGetAllProjectsRequest;
 
 [TestFixture]
 [Parallelizable]
