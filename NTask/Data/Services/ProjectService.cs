@@ -1,7 +1,6 @@
 using NTask.Data.Mappers;
 using NTask.Data.Models;
 using NTask.Data.Repositories;
-using NTask.Data.Services.Models.Communication;
 using NTask.Data.Services.Models.Communication.Projects;
 using NTask.Errors;
 
@@ -14,6 +13,15 @@ public class ProjectService
     public ProjectService(IProjectRepository projectRepository)
     {
         _projectRepository = projectRepository;
+    }
+
+    public GetAllProjectsResponse GetAllProjects()
+    {
+        var projectDictionary = _projectRepository.GetAll().ToDictionary(x => x.ProjectId, x => ProjectMapper.MapToDto(x));
+        return new GetAllProjectsResponse
+        {
+            Projects = projectDictionary
+        };
     }
 
     public GetProjectByIdResponse GetProjectById(Guid id)
