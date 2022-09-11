@@ -35,15 +35,18 @@ public class ProjectRepository : IProjectRepository
     public void Create(ProjectRecord projectRecord)
     {
         _context.Projects.Add(projectRecord);
+        _context.SaveChanges();
     }
 
     public void Update(ProjectRecord projectRecord)
     {
         _context.Projects.Update(projectRecord);
+        _context.SaveChanges();
     }
 
     public void Delete(ProjectRecord projectRecord)
     {
         _context.Projects.Remove(projectRecord);
+        _context.SaveChanges();
     }
 }
