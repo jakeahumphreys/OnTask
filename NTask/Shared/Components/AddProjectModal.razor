@@ -6,15 +6,17 @@
                 <h5 class="modal-title">Add Project</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <EditForm Model="@_projectDto" OnSubmit="FormSubmit">
+            <EditForm Model="@_formModel" OnValidSubmit="FormSubmit">
                 <div class="modal-body">
+                    <DataAnnotationsValidator/>
+                    <ValidationSummary/>
                     <div class="mb-3">
                         <label for="addProjectFormNameInput" class="form-label">Project Name</label>
-                        <input type="email" class="form-control" id="addProjectFormNameInput" required>
+                        <input type="email" class="form-control" id="addProjectFormNameInput" @bind="_formModel.Name">
                     </div>
                     <div class="mb-3">
                         <label for="addProjectFormDescriptionInput" class="form-label">Project Description</label>
-                        <textarea class="form-control" id="addProjectFormDescriptionInput" rows="2" required></textarea>
+                        <textarea class="form-control" id="addProjectFormDescriptionInput" rows="2" @bind="_formModel.Description"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

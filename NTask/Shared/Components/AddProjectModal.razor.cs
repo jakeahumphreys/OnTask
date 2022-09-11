@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using NTask.Data.Services.Models.DTO;
 
 namespace NTask.Shared.Components;
@@ -8,7 +9,7 @@ public partial class AddProjectModal
     private string _modalDisplay = "";
     private bool _showBackdrop = false;
 
-    private ProjectDto _projectDto = new ProjectDto();
+    private AddProjectFormModel _formModel = new AddProjectFormModel();
 
     public void Show()
     {
@@ -30,4 +31,12 @@ public partial class AddProjectModal
     {
         Console.WriteLine("Form Submitted");
     }
+}
+
+public class AddProjectFormModel
+{
+    [Required]
+    public string Name { get; set; }
+    [Required]
+    public string Description { get; set; }
 }
