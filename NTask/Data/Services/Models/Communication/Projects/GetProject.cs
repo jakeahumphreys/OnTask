@@ -1,6 +1,6 @@
 using NTask.Data.Services.Models.DTO;
 
-namespace NTask.Data.Services.Models.Communication;
+namespace NTask.Data.Services.Models.Communication.Projects;
 
 public class GetProjectByIdResponse : ResponseBase
 {

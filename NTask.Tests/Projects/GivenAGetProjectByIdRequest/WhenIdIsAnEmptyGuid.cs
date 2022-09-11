@@ -2,6 +2,7 @@ using Moq;
 using NTask.Data.Repositories;
 using NTask.Data.Services;
 using NTask.Data.Services.Models.Communication;
+using NTask.Data.Services.Models.Communication.Projects;
 using NUnit.Framework;
 
 namespace NTask.Tests.Projects.GivenAGetProjectByIdRequest;

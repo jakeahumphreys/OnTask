@@ -2,6 +2,7 @@ using NTask.Data.Mappers;
 using NTask.Data.Models;
 using NTask.Data.Repositories;
 using NTask.Data.Services.Models.Communication;
+using NTask.Data.Services.Models.Communication.Projects;
 using NTask.Errors;
 
 namespace NTask.Data.Services;
