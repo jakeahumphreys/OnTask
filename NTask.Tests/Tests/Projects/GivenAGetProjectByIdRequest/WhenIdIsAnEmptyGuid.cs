@@ -12,7 +12,7 @@ public sealed class WhenIdIsAnEmptyGuid
 {
     private GetProjectByIdResponse _result;
     private Mock<IProjectRepository> _repository;
-
+    
     [OneTimeSetUp]
     public void Setup()
     {
