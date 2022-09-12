@@ -17,7 +17,7 @@ public class ProjectService
 
     public GetAllProjectsResponse GetAllProjects()
     {
-        var projectDictionary = _projectRepository.GetAll().ToDictionary(x => x.ProjectId, x => ProjectMapper.MapToDto(x));
+        var projectDictionary = _projectRepository.GetAll().ToDictionary(x => x.ProjectId, ProjectMapper.MapToDto);
         return new GetAllProjectsResponse
         {
             Projects = projectDictionary
