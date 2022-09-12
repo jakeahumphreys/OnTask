@@ -8,6 +8,9 @@ A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-mo
 
 One of the big things about Blazor that I enjoy, is the ability to write the UI in CSS/HTML or use a third party library.
 
+## Stats
+![Alt](https://repobeats.axiom.co/api/embed/b098a65599c756408fdd9e47e281401b635b837c.svg "Repobeats analytics image")
+
 ## Technologies / Packages
 - Entity Framework (Using SQLite).
 - NUnit / Moq, for testing.
