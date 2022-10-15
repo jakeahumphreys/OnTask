@@ -1,0 +1,44 @@
+@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Projects</h1>
+<MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="OpenDialog">
+    Add New
+</MudButton>
+<MudDivider DividerType="DividerType.FullWidth" Class="my-6"/>
+
+<MudContainer>
+    <MudGrid Spacing="2" Justify="Justify.Center">
+    @foreach (var project in Projects)
+    {
+        <MudItem xs="6">
+            <MudCard Class="border-solid border-2 mud-border-primary pa-4 mud-elevation-4 rounded">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        @if (project.Value.IsArchived)
+                        {
+                            <MudChip Label="true" Color="Color.Info" Style="display:inline-block;">Archived</MudChip>
+                        }
+                        else
+                        {
+                            <MudChip Label="true" Color="Color.Success" Style="display:inline-block;">Active</MudChip>
+                        }
+                        <MudText Typo="Typo.body1" Style="display:inline-block;">@project.Value.Name</MudText>
+                        <br/>
+                        <MudText Typo="Typo.caption">ID: @project.Key</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudDivider/>
+                <MudCardContent>
+                    <MudText>@project.Value.Description</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Default" @onclick="@(() => OpenProject(project.Key))"/>
+                    <MudText Typo="Typo.caption">Created: @project.Value.Created</MudText>
+                </MudCardActions>
+            </MudCard>
+    </MudItem>
+    }
+    </MudGrid>
+</MudContainer>
