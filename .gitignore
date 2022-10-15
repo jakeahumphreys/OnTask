@@ -4,3 +4,5 @@
 NTask.Tests/bin
 NTask.Tests/obj
 NTask.sln.DotSettings.user
+NTask.MAUI/obj
+NTask.MAUI/bin
