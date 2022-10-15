@@ -2,6 +2,13 @@
 <img src="https://i.imgur.com/h7KHBm4.png" alt="An image of OnTask" alt="Markdown Monster icon" style="margin-right: 10px; border-style: solid; margin-bottom: 20px;" width="600" height="350"/>
 </div>
 
+>❗This Project has been halted in favour of OnTask.MAUI
+
+Rider has finally updated their MAUI support to include MAUI Blazor Apps and included debugging for WinUI projects. This means I'll be porting as much as I can
+to that project and continuing development there. 
+
+[Take a look](https://github.com/jakeahumphreys/OnTask.MAUI)
+
 
 # OnTask
 A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0) task management application written in .Net Core. As Blazor is the spiritual successor to ASP.Net I wanted to start transferring my knowledge into the framework. Blazor is currently actively developed with plans to make it compatible with MAUI.
@@ -50,7 +57,7 @@ electronize build /target linux
 
 ## Planned or Potential Features
 
->❗There's no guarantee that these are implemented
+>❗These features won't be implemented as I've basically halted this project in favour of OnTask.MAUI
 
 - File Upload Support.
 - User Management / Authentication.
