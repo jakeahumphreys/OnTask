@@ -55,8 +55,4 @@
       <PackageReference Include="MudBlazor" Version="6.0.17" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Data" />
-    </ItemGroup>
-
 </Project>
