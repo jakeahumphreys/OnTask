@@ -1,8 +1,6 @@
-﻿/NTask/obj/
-/NTask/bin
+﻿OnTask/bin
+OnTask/obj
 .idea
-NTask.Tests/bin
-NTask.Tests/obj
+OnTask.Tests/bin
+OnTask.Tests/obj
 NTask.sln.DotSettings.user
-NTask.MAUI/obj
-NTask.MAUI/bin
