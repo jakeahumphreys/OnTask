@@ -1,6 +1,6 @@
-using OnTask.Data.Repositories;
 using OnTask.MAUI.Data.Mappers;
 using OnTask.MAUI.Data.Models;
+using OnTask.MAUI.Data.Repositories;
 using OnTask.MAUI.Data.Services.Models.Communication.Projects;
 using OnTask.MAUI.Errors;
 

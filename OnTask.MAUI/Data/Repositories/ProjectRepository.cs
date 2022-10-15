@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using OnTask.MAUI.Data.Contexts;
 using OnTask.MAUI.Data.Models;
 
-namespace OnTask.Data.Repositories;
+namespace OnTask.MAUI.Data.Repositories;
 
 public interface IProjectRepository
 {
