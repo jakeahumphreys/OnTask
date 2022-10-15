@@ -1,9 +1,9 @@
 <div align="center">
-<img src="https://i.imgur.com/h7KHBm4.png" alt="An image of NTask" alt="Markdown Monster icon" style="margin-right: 10px; border-style: solid; margin-bottom: 20px;" width="600" height="350"/>
+<img src="https://i.imgur.com/h7KHBm4.png" alt="An image of OnTask" alt="Markdown Monster icon" style="margin-right: 10px; border-style: solid; margin-bottom: 20px;" width="600" height="350"/>
 </div>
 
 
-# NTask
+# OnTask
 A [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0) task management application written in .Net Core. As Blazor is the spiritual successor to ASP.Net I wanted to start transferring my knowledge into the framework. Blazor is currently actively developed with plans to make it compatible with MAUI.
 
 One of the big things about Blazor that I enjoy, is the ability to write the UI in CSS/HTML or use a third party library.
