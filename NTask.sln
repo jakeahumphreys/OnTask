@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTask", "NTask\NTask.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTask.Tests", "NTask.Tests\NTask.Tests.csproj", "{E13910B0-E7BC-42B9-AB90-2847652FB67D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTask.MAUI", "NTask.MAUI\NTask.MAUI.csproj", "{20BC7F2C-3050-4F63-A60B-87847068F9A0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{E13910B0-E7BC-42B9-AB90-2847652FB67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E13910B0-E7BC-42B9-AB90-2847652FB67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E13910B0-E7BC-42B9-AB90-2847652FB67D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20BC7F2C-3050-4F63-A60B-87847068F9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20BC7F2C-3050-4F63-A60B-87847068F9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20BC7F2C-3050-4F63-A60B-87847068F9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20BC7F2C-3050-4F63-A60B-87847068F9A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -50,7 +50,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-rc.2.22472.11" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0-rc.2.22472.11"/>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0-rc.2.22472.11" />
+      <PackageReference Include="MudBlazor" Version="6.0.17" />
     </ItemGroup>
 
 </Project>
